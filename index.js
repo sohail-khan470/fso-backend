@@ -7,7 +7,7 @@ const connectDB = require("./db/connect");
 const morgan = require("morgan");
 const notFound = require("./middlewares/not-found");
 const errorHandler = require("./middlewares/error");
-
+const cors = require("cors");
 require("express-async-errors");
 const {
   createMany,
@@ -21,6 +21,7 @@ const userController = require("./controllers/user");
 
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(cors());
 
 app.post("/create-bulk", createMany);
 
