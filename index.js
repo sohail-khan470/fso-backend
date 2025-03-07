@@ -6,6 +6,8 @@ const Note = require("./models/Note");
 const connectDB = require("./db/connect");
 const morgan = require("morgan");
 const notFound = require("./middlewares/not-found");
+const errorHandler = require("./middlewares/error");
+
 require("express-async-errors");
 const {
   createMany,
@@ -36,6 +38,8 @@ app.get("/users", userController.getAll);
 app.post("/login", userController.login);
 
 app.use(notFound);
+
+app.use(errorHandler);
 
 app.listen(4100, async () => {
   await connectDB();
