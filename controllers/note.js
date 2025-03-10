@@ -66,6 +66,7 @@ const deleteNote = async (req, res) => {
 };
 
 const updateNote = async (req, res) => {
+  console.log(req.body);
   const id = req.params.id;
   const note = req.body;
   try {

@@ -18,9 +18,10 @@ const {
   getOne,
 } = require("./controllers/note");
 const userController = require("./controllers/user");
-
-app.use(morgan("dev"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+
 app.use(cors());
 
 app.post("/create-bulk", createMany);
