@@ -12,7 +12,7 @@ const getTokenFrom = (req) => {
 
 const getAll = async (req, res) => {
   try {
-    const notes = await Note.find().populate("user");
+    const notes = await Note.find();
     res.status(200).json(notes);
   } catch (error) {
     console.error(error);
