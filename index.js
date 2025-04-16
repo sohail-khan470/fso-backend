@@ -35,7 +35,7 @@ app.put("/notes/:id", updateNote);
 app.delete("/notes/:id", deleteNote);
 app.get("/notes/:id", getOne);
 
-app.post("/users/create", userController.createUser);
+app.post("/users/register", userController.register);
 app.get("/users", userController.getAll);
 app.post("/login", userController.login);
 
